@@ -1,0 +1,38 @@
+&share
+    startDate = '2018-09-15_00:00:00'
+    endDate   = '2018-09-17_00:00:00'
+    interval  = 6
+    run_hour  = 48
+    integration_method =  'semi_implict'
+/
+
+&domain
+    dom_num = 2
+    dom_id = 1, 2
+    latMin = 12.0, 15.0
+    latMax = 25.0, 24.0
+    lonMin = 104.0, 105.0 
+    lonMax = 124.0, 120.0
+    dx = 0.1, 0.03333333333
+    dy = 0.1, 0.03333333333
+    dt = 90, 30
+    uvLBC  = 1, 1
+    etaLBC =  1, 1
+    history_interval = 60, 60
+    gridFile = "gridD01.nc","gridD02.nc"
+    etopoFile   = "ETOPO/etopo1_bedrock.nc"
+/
+
+&typhoon
+    BSTdata = "best_track_1822_2018091100_091300.txt"
+    ty_interval = 6
+    ty_pres_wind = "Holland"
+    tyBSTFile = "tc_best_track.nc"
+/
+&dynamics
+    windStress =  1
+    bottomDrag =  1
+    lateralDiffusion = 0
+    shapiroFilte = 0
+    coriolisForce = "explict"
+/
